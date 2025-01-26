@@ -6,6 +6,8 @@
 
 # Current File structure
 
+각 기능별 폴더는 MVVM 패턴에 따라 View, ViewModel, 관련 Widget들을 포함합니다.
+
 ```
 lib/
 ├── app/                    # 앱 초기화 및 설정
@@ -58,6 +60,61 @@ lib/
 - 브랜치: feature/, bugfix/, release/ 접두사 사용
 - 커밋 메시지: feat:, fix:, docs:, style:, refactor: 등 사용
 - PR 전 자체 코드 리뷰 필수
+
+# UI/UX Design Guide
+
+## Design System
+
+### Colors
+- Primary: #2196F3 (파란색 계열 - 신뢰감과 전문성)
+- Secondary: #4CAF50 (녹색 계열 - 건강과 영양)
+- Background: #FFFFFF
+- Surface: #F5F5F5
+- Text
+  - Primary: #212121
+  - Secondary: #757575
+  - Hint: #9E9E9E
+
+### Typography
+- Font Family: Pretendard
+- Headings
+  - H1: 24sp / Bold
+  - H2: 20sp / SemiBold
+  - H3: 18sp / Medium
+- Body
+  - Regular: 16sp
+  - Small: 14sp
+- Caption: 12sp
+
+### Components
+- Buttons
+  - Primary: Filled
+  - Secondary: Outlined
+  - Text Button
+- Cards
+  - Elevation: 2dp
+  - Corner Radius: 12dp
+- Bottom Navigation
+  - Height: 56dp
+  - Icon + Label
+
+## Screen Layouts
+
+필요한 각 씬마다 Screen Layouts를 작성합니다
+
+### 1. 온보딩 화면
+- 스플래시 화면
+  - 앱 로고 애니메이션
+- 사용자 정보 입력 (4단계)
+  1. 기본 정보 (이름, 나이, 성별)
+  2. 신체 정보 (키, 체중)
+  3. 활동량 선택 (슬라이더)
+  4. 목표 설정 (체중 감량/증량/유지)
+- 진행 상태 표시 (Progress Bar)
+
+### 2. 로그인 화면
+
+### 3. 홈 화면
 
 # Development plan & status
 

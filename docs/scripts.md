@@ -1,57 +1,75 @@
 # Documents
 
+## 구체화
 @frontend.md 파일의 "5. 테마 지원 / Phase 9: 테마 시스템 개선"을 구체화 해주세요.
 - 구체화 된 내용을 "Feature requirements"에 업데이트 해주세요. (체크는 하지마세요)
 - 구체화 된 내용을 Development plan & status에 업데이트 해주세요. (여기에 체크박스를 만들어주세요)
 
+@prd.md 위 내용을 바탕으로 PRD 문서를 마크다운 형식으로 작성해 주세요.
+1. Firebase Functions를 사용하여 API를 호출할 예정입니다.
+2. MVVM 패턴을 이용하여 파일 구조를 계획해 주세요.
+3. 모든 데이터는 로컬에 저장하여 사용할 계획입니다.
+4. 파이어베이스를 이용한 소셜 로그인을 통해 유저 정보를 기록하고 로컬 데이터에 저장하고 관리 할 계획입니다. (다른 서비스는 이용하지 않음)
 
-@frontend.md 와 @database.md 를 기반으로 @prd.md 의 `# 1. Project Overview` 를 업데이트 해주세요. 기존에 작성 된 것도 부족하거나 잘못됐으면 고쳐주세요.
-@frontend.md 와 @database.md 를 기반으로 @prd.md 의 `# 2. Core functionalities` 를 개선해주세요. 기존에 작성 된 것도 부족하거나 잘못됐으면 고쳐주세요.
+@prd.md의 내용을 바탕으로 @frontend.md 문서를 마크다운 형식으로 작성해 주세요.
+1. UI/UX 디자이너의 관점에서 최대한 현대적이고 깔끔한 디자인을 구상해 주세요.
+2. 사용자가 쉽게 이용하고 직관적으로 이해할 수 있는 구조로 만들어 주세요.
+3. MVVM 패턴으로 설계해 주세요.
+4. 작업 순서에 따른 체크리스트를 만들어 주세요.
 
-@Codebase 이제까지 진행사항을 @frontend.md에 다음 사항을 수행하세요
-- Development plan & status에 현재까지의 진행 사항 업데이트 및 체크해주세요
-
-@Codebase 이제까지 진행사항을 @frontend.md에 다음 사항을 수행하세요
-- Feature requirements에는 수정 및 신규 항목만 업데이트 해주세요 (체크는 하지마세요)
-
-lib 폴더의 모든 소스코드 파일들 @frontend.md # File structure 폴더 구조 대로 정리해줘
-
-@database.md 파일에 데이터베이스 구조와 파이어베이스 스토리지 사용에 관한 구조설계를 해줘 md 파일에 맞게 작성해. 우리가 앱에서 구현할 기능은 아래와 같아.
+@database.md 파일에 database 구조와 firebase storage 구조설계를 해서 @database.md 파일에 맞게 작성해.
+우리가 앱에서 구현할 기능은 아래와 같아.
 1. 소셜 로그인시 로그인 정보 저장
 2. 게시글 업로드시 정보 저장
 3. 미디어 파일 업로드시 스토리지에 저장
 
-@database.md 파일에 설계된 데이터 구조를 바탕으로, 이 프로젝트에서 Firebase Firestore와 Storage를 사용하는 각 기능의 구현 계획을 마크다운 형식의 체크 리스트를 추가해주세요. 그리고 이 계획에 따라 작업을 진행해주세요.
+@prd.md 와 @frontend.md 문서를 참고하여 @database.md 를 마크다운 형식으로 작성해주세요
+1. 데이터는 로컬에 저장 할 예정입니다.
+2. 해당 문서들을 기반으로 효율적인 데이터 구조를 만들어주세요
+3. 데이터베이스의 규칙을 설정하여 일관성을 유지하세요
 
-@database.md "Firestore 규칙 (유저 정보, 업로드 데이터 등), Firebase Storage 규칙 (미디어 파일 관리), 데이터 관리 지침, 추가 규칙"에 부족한 부분이 있으면 수정 및 업데이트 해줘
+## 진행사항 업데이트
+@Codebase 이제까지 진행사항을 @frontend.md 'Development plan & status'에 현재까지 진행 사항 업데이트 및 체크해주세요
+@Codebase 이제까지 진행사항을 @frontend.md에 'Feature requirements'에는 상이한 부분 수정 및 신규 항목만 써주세요 (체크 없이)
 
-# Coding
+@frontend.md 와 @database.md 를 기반으로
+@prd.md 의 `# 1. Project Overview` 를 업데이트 해주세요. 기존에 작성 된 것도 부족하거나 잘못됐으면 고쳐주세요.
+@frontend.md 와 @database.md 를 기반으로
+@prd.md 의 `# 2. Core functionalities` 를 개선해주세요. 기존에 작성 된 것도 부족하거나 잘못됐으면 고쳐주세요.
 
-@frontend.md 파일의 Phase 1을 기반으로 @Codebase 플러터 앱 제작을 시작해주세요. 각 작업이 끝날 때마다 현재 진행 상황을 frontend.md 파일에 업데이트하며 안정적으로 작업을 진행해 주세요.
+lib 폴더의 모든 소스코드 파일들 @frontend.md # File structure 폴더 구조 대로 정리해줘
 
-@frontend.md 파일의 "5. 테마 지원 / Phase 9: 테마 시스템 개선"을 기반으로 @Codebase 플러터 앱 제작을 시작해주세요. 각 작업이 끝날 때마다 현재 진행 상황을 frontend.md 파일에 "Development plan & status"업데이트하며 안정적으로 작업을 진행해 주세요.
+@database.md 파일에 설계된 데이터 구조를 바탕으로,
+이 프로젝트에서 Firebase Firestore와 Storage를 사용하는 각 기능의 구현 계획을 마크다운 형식의 체크 리스트를 추가해주세요.
+그리고 이 계획에 따라 작업을 진행해주세요.
 
-아래 작업내용을 기반으로 @Codebase 플러터 앱 제작을 시작해주세요. 각 작업이 끝날 때마다 Development plan & status과 추가된 요소들을 frontend.md 파일에 업데이트하며 안정적으로 작업을 진행해 주세요.
+@database.md "Firestore 규칙 (유저 정보, 업로드 데이터 등), Firebase Storage 규칙 (미디어 파일 관리), 데이터 관리 지침, 추가 규칙"에 부족한 부분이 있으면 수정 및 업데이트 해주세요
+
+# Programming
+
+@frontend.md 문서를 바탕으로 @Codebase 앱의 프론트엔드 구현 작업만 먼저 실행해주세요. 작업이 마무리되면 항상 이 문서를 업데이트하는 방식으로 진행해 주세요.
+가능하다면 한 세션에서 3~4개의 작업을 완료해주세요.
+
+@frontend.md 파일의 Phase 1을 기반으로 @Codebase 플러터 앱 제작을 시작해주세요.
+각 작업이 끝날 때마다 현재 진행 상황을 frontend.md 파일에 업데이트하며 안정적으로 작업을 진행해 주세요.
+
+아래 작업내용을 기반으로 @Codebase 플러터 앱 제작을 시작해주세요.
+각 작업이 끝날 때마다 Development plan & status과 추가된 요소들을 frontend.md 파일에 업데이트하며 안정적으로 작업을 진행해 주세요.
 [작업내용]
 홈 화면에 콘텐츠 레이아웃을 아래와 같이 작성해줘
 - 가장 위에 하이라이트로 큰 사진 슬라이드와 슬라이드 하단 왼쪽에 뉴스 제목 서줘
 - '큰 사진 슬라이드' 밑에 뉴스 들을 2열로 배열해줘
 
-아래 작업내용을 기반으로 @Codebase 플러터 앱 제작을 시작해주세요. 각 작업이 끝날 때마다 Development plan & status과 추가된 요소들을 frontend.md 파일에 업데이트하며 안정적으로 작업을 진행해 주세요.
-[작업내용]
-다크/라이트 테마를 제대로 만들어보고 싶습니다.
-지금은 다크 테마 위주로 만들어져 있습니다. 따라서 지금 설정된 색 들은 다크테마 설정 및 constant에 넣어주시고, 세련된 UI의 라이트 테마를 dark 테마의 데이터와 동일하게 만들어 적용해야합니다.
-
-아래 작업내용을 기반으로 @Codebase 플러터 앱 제작을 시작해주세요. 각 작업이 끝날 때마다 Development plan & status과 추가된 요소들을 frontend.md 파일에 업데이트하며 안정적으로 작업을 진행해 주세요.
-[작업내용]
-News Card나 list item을 터치하면 제목, 이미지, 뉴스 내용을 보여주는 screen이 있었으면 좋겠습니다.
-
 @news_list_section.dart 에서 되도록 많은 뉴스를 보여주기 위해 아래와 같이 배치해
+```
 사진 | 카테고리 제목        source |
 사진 | 기사 (maxLine==2)         |
 사진 |                          |
+```
 
 @news_screen.dart 에서 model/data를 다루지 말고, news_view_model.dart에서 다루도록 수정해
 
-@home_screen.dart 에서 model/data를 다루지 말고, home_view_model.dart에서 다루도록 수정해
+@firebase.options.dart 를 이용해 로그인 페이지를 구현하고 로그인이 완료 되면 온보딩 페이지가 나타나게 해주세요,
+온보딩 페이지에 식습관과 개인 건강정보(알레르기, 기저질환 등)를 입력할 수 있는 페이지를 만들고,
+@frontend.md와 @database.md 에 각각 내용을 추가 하세요.
 
