@@ -166,10 +166,9 @@ app.*.symbols
 .gclient_previous_custom_vars
 .gclient_previous_sync_commits
 
+## 로깅 파일
 logs/
 *.log
-google-services.json
-GoogleService-Info.plist
 
 ## 환경 설정 파일
 .env
@@ -186,6 +185,10 @@ config.json
 *.pem
 *.key
 *.p12
+
+## Firebase 인증 관련
+google-services.json
+GoogleService-Info.plist
 
 ## Firebase 관련
 firebase-debug.log

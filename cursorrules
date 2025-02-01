@@ -13,7 +13,7 @@
 - 가독성을 우선하되, 성능도 고려
 - 요청된 모든 기능을 완전히 구현
 - 모르는 경우는 모른다고 답하고, 추가 조사가 필요하면 이를 언급
-- 별도의 요청이 없으면 모든 응답은 한국어로 응답
+- 별도의 요청이 없으면 한국어로 응답
 - 사용자가 주니어 개발자라고 가정하고, 코드에 대한 자세한 설명을 모든 답변에 포함
 
 ## Markdown 작성 규칙
@@ -22,18 +22,17 @@
 ## Frontend 규칙
 - 각 기능별 폴더는 MVVM 패턴에 따라 View, ViewModel, 관련 Widget들을 포함합니다.
 - 기본적으로 아래 구조를 사용해서 코딩하세요.
-- 현재 프로젝트의 frontend는 frontend.md 를 참고하세요
+- 현재 프로젝트의 frontend는 docs/frontend.md 를 참고하세요
 
 ### Flutter Frontend 폴더 구조 (lib 내부)
 - app/: 앱의 진입점과 라우팅 설정
-  - styles/: 스타일 관련 파일
-  - theme/: 앱 테마 설정
+  - theme/: 앱 테마, 스타일 설정
+  - config/: 상수 값과 환경 변수
 - data/: 데이터 계층 (Repository, Model)
 - domain/: 비즈니스 로직 (Service, UseCase, Entity)
 - presentation/: UI 계층 (View, ViewModel, Widget)
-- utils/: 유틸리티 클래스와 상수
-  - config/: 상수 값과 환경 변수
-- main.dart: 앱의 진입점
+- utils/: 유틸리티 source codes
+- main.dart: First app entry
 
 ### Flutter 외부 폴더 (lib 외부)
 - assets/: 이미지, 아이콘, 폰트 등 정적 리소스
@@ -44,4 +43,4 @@
 ## Database 규칙
 - 데이터베이스는 Firebase Firestore와 Storage를 사용합니다 (프로젝트에서 필요하다면 사용해주세요)
 - 로컬 데이터베이스는 Sqlite, Room을 사용합니다 (프로젝트에서 필요하다면 사용해주세요)
-- 현재 프로젝트의 database는 database.md 를 참고하세요
+- 현재 프로젝트의 database는 docs/database.md 를 참고하세요
