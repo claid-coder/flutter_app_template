@@ -116,7 +116,7 @@ lib/
 
 ### 3. 홈 화면
 
-# Development plan & status
+# Development plan & checklist
 
 ## Phase 1: 프로젝트 초기 설정
 
