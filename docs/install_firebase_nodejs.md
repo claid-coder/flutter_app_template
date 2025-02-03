@@ -36,7 +36,7 @@ export NVM_DIR="$HOME/.nvm"
 0.40.1
 
 ## Node.js update
-% nvm install 22                                                                 
+% nvm install 22
 Downloading and installing node v22.13.1...
 Downloading https://nodejs.org/dist/v22.13.1/node-v22.13.1-darwin-arm64.tar.xz...
 ############################################################################################################################### 100.0%
@@ -53,7 +53,7 @@ v22.13.1
 removed 11 packages, and changed 43 packages in 2s
 24 packages are looking for funding
 run `npm fund` for details
-% npm -v            
+% npm -v
 11.1.0
 
 ## firebase-tools
@@ -140,8 +140,8 @@ more information on organizing your functions using codebases.
 Functions can be deployed with firebase deploy.
 
 ? What language would you like to use to write Cloud Functions? (Use arrow keys)
-❯ JavaScript 
-  TypeScript 
+❯ JavaScript
+  TypeScript
   Python
 
 방향키로 JavaScript. 엔터
@@ -188,22 +188,23 @@ i  Writing project information to .firebaserc...
 Firebase. Would you prefer to reuse the values in your existing `firebase.json` file
 to configure your project? (y/n) › no ← no 입력해야함
 
- ⠹ Fetching available Firebase projects...                                                                                            
-i Found 4 Firebase projects. Selecting project copy-voice-chat.                                                                       
-? Which platforms should your configuration support (use arrow keys & space to select)? ›                                             
+ ⠹ Fetching available Firebase projects...
+
+i Found 4 Firebase projects. Selecting project copy-voice-chat.
+? Which platforms should your configuration support (use arrow keys & space to select)? ›
 ✔android
 ✔ios
   macos
-  web                                  
+  web
   windows
 
 android, ios 선택되어 있으면 엔터
 
-✔ Which platforms should your configuration support (use arrow keys & space to select)? · android, ios                                
-i Firebase android app com.innorabbit.copy_voice_chat is not registered on Firebase project copy-voice-chat.                          
-i Registered a new Firebase android app on Firebase project copy-voice-chat.                                                          
-i Firebase ios app com.innorabbit.copyVoiceChat is not registered on Firebase project copy-voice-chat.                                
-i Registered a new Firebase ios app on Firebase project copy-voice-chat.                                                              
+✔ Which platforms should your configuration support (use arrow keys & space to select)? · android, ios
+i Firebase android app com.innorabbit.copy_voice_chat is not registered on Firebase project copy-voice-chat.
+i Registered a new Firebase android app on Firebase project copy-voice-chat.
+i Firebase ios app com.innorabbit.copyVoiceChat is not registered on Firebase project copy-voice-chat.
+i Registered a new Firebase ios app on Firebase project copy-voice-chat.
 
 Firebase configuration file lib/firebase_options.dart generated successfully with the following Firebase apps:
 
