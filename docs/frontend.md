@@ -4,7 +4,7 @@
 # Feature requirements
 
 
-# Current File structure
+# Frontent Project Structure
 
 각 기능별 폴더는 MVVM 패턴에 따라 View, ViewModel, 관련 Widget들을 포함합니다.
 
@@ -29,6 +29,17 @@ lib/
     ├── constants.dart
     ├── theme.dart
     └── helpers.dart
+```
+
+## Data Models
+
+### User
+```dart
+class User {
+  String uid;
+  String email;
+  String name;
+}
 ```
 
 # Rules
@@ -66,37 +77,45 @@ lib/
 ## Design System
 
 ### Colors
-- Primary: #2196F3 (파란색 계열 - 신뢰감과 전문성)
-- Secondary: #4CAF50 (녹색 계열 - 건강과 영양)
-- Background: #FFFFFF
-- Surface: #F5F5F5
-- Text
-  - Primary: #212121
-  - Secondary: #757575
-  - Hint: #9E9E9E
+- Primary: #4CAF50 (건강한 녹색)
+- Secondary: #2196F3 (상쾌한 파랑)
+- Background: #FFFFFF (화이트)
+- Surface: #F5F5F5 (밝은 그레이)
+- Text:
+  - Primary: #212121 (진한 그레이)
+  - Secondary: #757575 (중간 그레이)
+- Accent:
+  - Success: #66BB6A (연한 녹색)
+  - Warning: #FFA726 (주황)
+  - Error: #EF5350 (빨강)
 
 ### Typography
 - Font Family: Pretendard
 - Headings
-  - H1: 24sp / Bold
-  - H2: 20sp / SemiBold
-  - H3: 18sp / Medium
+  - H1: Pretendard / 24sp / Bold
+  - H2: Pretendard / 20sp / SemiBold
+  - H3: Pretendard / 18sp / SemiBold
 - Body
-  - Regular: 16sp
-  - Small: 14sp
-- Caption: 12sp
+  - Body1: Pretendard / 16sp / Regular
+  - Body2: Pretendard / 14sp / Regular
+- Caption: Pretendard / 12sp / Regular
 
 ### Components
 - Buttons
-  - Primary: Filled
+  - Primary: 둥근 모서리, Filled
   - Secondary: Outlined
-  - Text Button
+  - Text Button: 원형 배경의 아이콘
 - Cards
+  - 부드러운 그림자, 8dp 라운드 코너
   - Elevation: 2dp
-  - Corner Radius: 12dp
+  - Corner Radius: 8dp
 - Bottom Navigation
   - Height: 56dp
   - Icon + Label
+- 입력 필드
+  - Outlined 스타일, 포커스 시 색상 변경
+- 바텀 시트
+  - 둥근 상단 모서리, 드래그 핸들 포함
 
 ## Screen Layouts
 

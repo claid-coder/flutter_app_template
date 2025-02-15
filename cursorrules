@@ -15,6 +15,7 @@
 - 모르는 경우는 모른다고 답하고, 추가 조사가 필요하면 이를 언급
 - 별도의 요청이 없으면 한국어로 응답
 - 사용자가 주니어 개발자라고 가정하고, 코드에 대한 자세한 설명을 모든 답변에 포함
+- 현재 프로젝트의 Product Requirements는 docs/prd.md 를 참고하세요
 
 ## Markdown 작성 규칙
 - Markdown에 코드블록 작성 시 두 개의 공백을 사용해서 들여쓰기 합니다.
@@ -23,14 +24,19 @@
 - 각 기능별 폴더는 MVVM 패턴에 따라 View, ViewModel, 관련 Widget들을 포함합니다.
 - 기본적으로 아래 구조를 사용해서 코딩하세요.
 - 현재 프로젝트의 frontend는 docs/frontend.md 를 참고하세요
+- Provider 사용 시, dispose() 되는 경우, addListener()로 전달한 함수를 removeListener()에 전달하여 등록을 해제해야 합니다. 그렇지 않은 경우, 메모리 누수(Memory Leak)가 발생할 수 있습니다.
 
 ### Flutter Frontend 폴더 구조 (lib 내부)
 - app/: 앱의 진입점과 라우팅 설정
-  - theme/: 앱 테마, 스타일 설정
-  - config/: 상수 값과 환경 변수
+  - theme: 앱 테마, 스타일 설정
+  - config: 상수 값과 환경 변수
 - data/: 데이터 계층 (Repository, Model)
 - domain/: 비즈니스 로직 (Service, UseCase, Entity)
 - presentation/: UI 계층 (View, ViewModel, Widget)
+  - [view이름]/
+    - widget/: 해당 View의 하위 위젯들
+    - [view이름]_view.dart: View
+    - [view이름]_viewmodel.dart: ViewModel
 - utils/: 유틸리티 source codes
 - main.dart: First app entry
 
@@ -39,6 +45,57 @@
 - firebase/: Firebase 관련 파일
 - docs/: 문서 파일. Cursor AI에서 참고하세요
 - .cursorrules
+
+### MVVM 규칙
+MVVM은 소프트웨어를 Model / View / ViewModel로 관심사 분리하여 View를 쉽게 변경할 수 있도록 만들어줍니다.
+
+- View: UI 담당
+- ViewModel: View 상태 및 로직 담당
+- Model: 비즈니스 로직 & 데이터 입출력 담당
+
+MVVM은 UI와 비즈니스 로직을 View와 ViewModel로 분리하고,
+데이터바인딩을 이용해 ViewModel이 View에 대한 의존성을 갖지 않도록 만들어,
+View를 손쉽게 변경할 수 있는 아키텍처입니다.
+
+#### 데이터바인딩(DataBinding)
+- ViewModel이 View를 직접 갱신하지 않고, View가 알아서 갱신되는 방법
+- ViewModel이 View를 직접 갱신하지 않기 때문에, ViewModel이 View를 몰라도 됨
+
+ViewModel이 View를 모른다.
+- ViewModel에 View 관련 코드가 없다.
+- ViewModel이 View에 의존성이 없다.
+- View가 변경되어도 ViewModel에 영향을 끼치지 못한다.
+- View를 변경할 때 ViewModel을 신경쓸 필요가 없다.
+- View를 쉽게 변경할 수 있다.
+
+데이터바인딩은 Provider 패키지를 이용한다.
+
+- ViewModel의 변수값을 변경한 뒤 notifyListeners()를 호출하면, View에서 `context.watch`로 바인딩 되어있기 때문에 View가 갱신됩니다.
+- ViewModel에는 View 관련 코드가 없기 때문에 View 변경시 ViewModel을 수정할 필요가 없습니다.
+
+#### MVVM 구현 방법
+- DataBinding
+    - Provider 패키지를 이용해 구현
+- ViewModel
+    - 각 페이지마다 하나의 ViewModel을 구현
+    - View의 상태와 로직을 관리
+- Model을 세분화 합니다.
+    - Service: 앱의 전역 상태 및 비즈니스 로직 담당
+    - Model: 데이터 클래스 담당
+    - Repository: 데이터 요청 로직 담당
+
+#### MVVM with Provider
+
+Root에 주입된 Provider
+- App이 종료될 때 까지 사라지지 않습니다.
+- 하위 위젯 어디서든 접근 가능합니다.
+
+View에 주입된 Provider
+- View가 사라질 때 함께 사라집니다.
+- 해당 View 하위 위젯에서만 접근 가능합니다.
+
+Service는 앱의 전역 상태를 담당하고 여러 화면에서 접근하기 때문에 Root에 주입하고,
+특정 View에서만 접근하는 ViewModel은 메모리 절약을 위해 View에 주입
 
 ## Database 규칙
 - 데이터베이스는 Firebase Firestore와 Storage를 사용합니다 (프로젝트에서 필요하다면 사용해주세요)

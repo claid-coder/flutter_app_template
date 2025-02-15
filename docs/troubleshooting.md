@@ -280,3 +280,8 @@ class GeminiService {
 ...
 }
 ```
+
+## Flutter - 앱 권한 관리하기(permission_handler)
+https://velog.io/@error/Flutter-%EC%95%B1-%EA%B6%8C%ED%99%98-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0
+
+voice_chat에서는 permission_handler 사용 안하고도 풀리는 문제였음

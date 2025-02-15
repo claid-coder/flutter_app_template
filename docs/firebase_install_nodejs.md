@@ -3,15 +3,17 @@
 firebase-tools를 설치해야됨
 
 ## NVM 설치
+
+```shell
 % curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 Dload  Upload   Total   Spent    Left  Speed
 100 16563  100 16563    0     0   401k      0 --:--:-- --:--:-- --:--:--  462k
-=> nvm is already installed in /Users/jaeminko/.nvm, trying to update using git
+=> nvm is already installed in /Users/[username]/.nvm, trying to update using git
 => => Compressing and cleaning up git repository
 
-=> nvm source string already in /Users/jaeminko/.zshrc
-=> bash_completion source string already in /Users/jaeminko/.zshrc
+=> nvm source string already in /Users/[username]/.zshrc
+=> bash_completion source string already in /Users/[username]/.zshrc
 => You currently have modules installed globally with `npm`. These will no
 => longer be linked to the active version of Node when you install a new node
 => with `nvm`; and they may (depending on how you construct your `$PATH`)
@@ -34,8 +36,11 @@ export NVM_DIR="$HOME/.nvm"
 % source ~/.nvm/nvm.sh
 % nvm --version
 0.40.1
+```
 
 ## Node.js update
+
+```shell
 % nvm install 22
 Downloading and installing node v22.13.1...
 Downloading https://nodejs.org/dist/v22.13.1/node-v22.13.1-darwin-arm64.tar.xz...
@@ -47,14 +52,18 @@ Now using node v22.13.1 (npm v10.9.2)
 v22.13.1
 % npm -v
 10.9.2
+```
 
 ## NPM upgrade
+
+```shell
 % npm install -g npm
 removed 11 packages, and changed 43 packages in 2s
 24 packages are looking for funding
 run `npm fund` for details
 % npm -v
 11.1.0
+```
 
 ## firebase-tools
 
@@ -71,7 +80,7 @@ added 635 packages in 25s
 
 ## firebase functions setting
 
-```
+```shell
 % firebase init
 (node:57777) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
@@ -84,7 +93,7 @@ added 635 packages in 25s
 
 You're about to initialize a Firebase project in this directory:
 
-  /Users/jaeminko/Workspace/CursorStudy/copy_voice_chat
+  /Users/[username]/Workspace/CursorStudy/copy_voice_chat
 
 ? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your 
 choices. (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
@@ -140,8 +149,8 @@ more information on organizing your functions using codebases.
 Functions can be deployed with firebase deploy.
 
 ? What language would you like to use to write Cloud Functions? (Use arrow keys)
-❯ JavaScript
-  TypeScript
+❯ JavaScript 
+  TypeScript 
   Python
 
 방향키로 JavaScript. 엔터
@@ -182,29 +191,28 @@ i  Writing project information to .firebaserc...
 
 ## flutterfire configure
 
-```
+```shell
 % flutterfire configure
 ? You have an existing `firebase.json` file and possibly already configured your project for
 Firebase. Would you prefer to reuse the values in your existing `firebase.json` file
 to configure your project? (y/n) › no ← no 입력해야함
 
- ⠹ Fetching available Firebase projects...
-
-i Found 4 Firebase projects. Selecting project copy-voice-chat.
-? Which platforms should your configuration support (use arrow keys & space to select)? ›
-✔android
-✔ios
-  macos
-  web
+ ⠹ Fetching available Firebase projects...                                                                                            
+i Found 4 Firebase projects. Selecting project copy-voice-chat.                                                                       
+? Which platforms should your configuration support (use arrow keys & space to select)? ›                                             
+✔ android                                                                                                                             
+✔ ios                                                                                                                                 
+  macos                                                                                                                               
+  web                                                                                                                                 
   windows
 
 android, ios 선택되어 있으면 엔터
 
-✔ Which platforms should your configuration support (use arrow keys & space to select)? · android, ios
-i Firebase android app com.innorabbit.copy_voice_chat is not registered on Firebase project copy-voice-chat.
-i Registered a new Firebase android app on Firebase project copy-voice-chat.
-i Firebase ios app com.innorabbit.copyVoiceChat is not registered on Firebase project copy-voice-chat.
-i Registered a new Firebase ios app on Firebase project copy-voice-chat.
+✔ Which platforms should your configuration support (use arrow keys & space to select)? · android, ios                                
+i Firebase android app com.innorabbit.copy_voice_chat is not registered on Firebase project copy-voice-chat.                          
+i Registered a new Firebase android app on Firebase project copy-voice-chat.                                                          
+i Firebase ios app com.innorabbit.copyVoiceChat is not registered on Firebase project copy-voice-chat.                                
+i Registered a new Firebase ios app on Firebase project copy-voice-chat.                                                              
 
 Firebase configuration file lib/firebase_options.dart generated successfully with the following Firebase apps:
 
