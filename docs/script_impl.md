@@ -2,9 +2,83 @@
 
 ## App 구현에 실제 사용한 스크립트
 
+아래 코드를 예시로 @app.dart @routes.dart 를 작성하라
 
+```dart
+이전에 구현한 routes.dart 코드
+```
+
+@frontend.md 와 아래 코드를 참고하여 이 앱에 어울리는 @theme.dart 를 작성하시오
+
+```dart
+이전에 구현한 theme 코드
+```
+
+@03_frontend.md @02_prd.md 를 참고하여 @theme.dart 에 알맞은 테마 색과 수치를 업데이트 해라. 전체적인 코드 구조는 유지하라
+
+@routes.dart 를 기반으로 presentation 스켈레톤을 작성하고, 기본적인 view를 구현하라
+
+로그인 화면을 만들어보자. 로그인 화면은 @splash_view.dart  가 끝나면 글자가 슬라이드 되어 사라지고,
+route로 지금과 같은 배경에 @login_view.dart  로그인 버튼이 나타나는 거야.
+로그인 버튼들은 아래를 참고해
+
+```
+SizedBox(
+  width: double.infinity,
+  child: ElevatedButton.icon(
+    onPressed: viewModel.isLoading
+        ? null
+        : () => viewModel.signInWithGoogle(context),
+    icon: viewModel.isLoading
+        ? const SizedBox(
+            width: 24,
+            height: 24,
+            child: CircularProgressIndicator(),
+          )
+        : const FaIcon(FontAwesomeIcons.google,
+            color: Colors.red),
+    label: Text(
+      viewModel.isLoading ? '로그인 중...' : 'Google로 시작하기',
+    ),
+    style: ElevatedButton.styleFrom(
+      padding: const EdgeInsets.symmetric(
+          horizontal: 24, vertical: 12),
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black87,
+    ),
+  ),
+),
+const SizedBox(height: 16),
+SizedBox(
+  width: double.infinity,
+  child: ElevatedButton.icon(
+    onPressed: () => viewModel.signInWithApple(context),
+    icon: const FaIcon(FontAwesomeIcons.apple),
+    label: const Text('Apple로 시작하기'),
+    style: ElevatedButton.styleFrom(
+      padding: const EdgeInsets.symmetric(
+          horizontal: 24, vertical: 12),
+      backgroundColor: Colors.black,
+      foregroundColor: Colors.white,
+    ),
+  ),
+),
+```
+
+@home_view.dart 에서는 지금 테마 적용해주고,
+@02_prd.md 에 적힌 ## 홈 화면의 스켈레톤 presenation을 적용해줘
+
+@home_view.dart 에 추천 캐릭터 목록의 아이템들을 카드 형태로 만들어줘
+인기 캐릭터, 신규 캐릭터, 사용자 맞춤 추천 섹션도 만들어줘
+
+자 _buildCharacterSection에 들어갈 각 요소들을 data/dummy 폴더에 임시로 만들거야.
+dummy를 만들기 위해서 data/repository, data/model을 먼저 만들어줘야겠지?
+
+
+---
 
 ## 구체화
+
 @frontend.md 파일의 "5. 테마 지원 / Phase 9: 테마 시스템 개선"을 구체화 해주세요.
 - 구체화 된 내용을 "Feature requirements"에 업데이트 해주세요. (체크는 하지마세요)
 - 구체화 된 내용을 Development plan & status에 업데이트 해주세요. (여기에 체크박스를 만들어주세요)
